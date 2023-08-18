@@ -1,0 +1,12 @@
+<div class="dropdown navbar-dark bg-dark">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="countryDropdown" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      Select Country
+    </button>
+    <div class="dropdown-menu navbar-dark bg-dark" aria-labelledby="countryDropdown" style="max-height: 200px; overflow-y: auto;">
+      <a class="dropdown-item custom-dropdown-item" *ngFor="let country of countryNames"  (click)="selectCountry(country)">
+        {{ country }}
+      </a>
+    </div>
+  </div>
+  

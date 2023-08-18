@@ -1,0 +1,42 @@
+<div> 
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div className="imgcontainer" style="text-align: center;
+        margin: 24px 0 12px 0;">
+            <img src="assets/images/login.png" alt="Avatar" className="avatar" style="width: 40%;
+            border-radius: 50%;" />
+        </div>
+        <div className="container">
+        <label htmlFor="email"><b>&nbsp;Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+            <input
+                type="text"
+                id="email"
+                placeholder="Enter Email"
+                formControlName="email"
+            >
+            <br />
+            <div
+            *ngIf="
+            loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+             "
+            >
+            Email is required 
+            </div>
+            <label htmlFor="password">&nbsp;<b>Password&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b></label>
+            <input 
+                type="password"
+                id="password"
+                placeholder="Enter Password"  
+                formControlName="password"
+            >
+            <br />
+            <div
+            *ngIf="
+            loginForm.get('password')?.invalid && loginForm.get('password')?.touched
+             "
+            >
+            Password is required
+            </div>
+            <button type="submit" [disabled]="!loginForm.valid">Login</button>
+        </div>
+    </form>
+</div>
